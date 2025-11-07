@@ -1,0 +1,17 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>鰆サーバー</title>
+</head>
+<body>
+  <h2>鰆のメンバー</h2>
+  <table>
+    <tr><th>ID</th><th>駅コード</th></tr>
+      <% for( let row of data ) { %>
+        <tr><td><%= row.id %></td>
+        <td><%= row.code %></td></tr>
+      <% } %>
+  </table>
+</body>
+</html>

@@ -1,3 +1,4 @@
+const { name } = require("ejs");
 const express = require("express");
 const app = express();
 
@@ -12,6 +13,19 @@ let station = [
   { id:5, code:"JE14", name:"海浜幕張駅"},
   { id:6, code:"JE05", name:"新浦安駅"},
 ];
+
+let sawara = [
+  {id:1, code:"riarumogura"},
+  {id:2, code:"Rainn7"},
+  {id:3, code:"kanarisenpai"},
+  {id:4, code:"mista"}
+];
+
+app.get("/sawara", (req, res) => {
+  // 本来ならここにDBとのやり取りが入る
+  res.render('db3', { data: sawara });
+});
+
 
 app.get("/keiyo", (req, res) => {
   // 本来ならここにDBとのやり取りが入る
