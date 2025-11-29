@@ -33,10 +33,10 @@ let sawara = [
 ];
 
 let zahyo = [
-  {id:1, name:"mapleforest1", x:6200, y:60, z:5600},
-  {id:2, name:"cave1", x:6245, y:40, z:5567},
-  {id:3, name:"mansion1", x:712, y:60, z:25240},
-  {id:4, name:"mapleforest2", x:700, y:55, z:5400}
+  {id:1, name:"mapleforest1", x:6200, y:60, z:5600, memo:"拠点から少し遠い、漁りかけ"},
+  {id:2, name:"cave1", x:6245, y:40, z:5567, memo:"廃坑に続いてる、毒蜘蛛スポナーは破壊済み"},
+  {id:3, name:"mansion1", x:712, y:60, z:25240, memo:"拠点から遠い、拠点近くネザー経由で行ける"},
+  {id:4, name:"mapleforest2", x:700, y:55, z:5400, memo:"拠点から一番近い、地下にサクラダイヤモンド採掘場"}
 ];
 
 app.get("/", (req, res) => {
@@ -169,11 +169,13 @@ app.get("/zahyo/edit/:number", (req, res) => {
 });
 
 // Update
-app.post("/keiyo2/update/:number", (req, res) => {
+app.post("/zahyo/update/:number", (req, res) => {
+  zahyo[req.params.number].id = req.body.id;
   zahyo[req.params.number].name = req.body.name;
   zahyo[req.params.number].x = req.body.x;
   zahyo[req.params.number].y = req.body.y;
   zahyo[req.params.number].z = req.body.z;
+  zahyo[req.params.number].memo = req.body.memo;
   console.log( zahyo );
   res.redirect('/zahyo' );
 });

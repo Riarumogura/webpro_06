@@ -17,7 +17,7 @@
   </style>
   <div>
   <table border="1" cellpadding="15">
-    <tr><th>ID</th><th>名前</th><th>X座標</th><th>y座標</th><th>Z座標</th><th></th></tr>
+    <tr><th>No.</th><th>名前</th><th>X座標</th><th>y座標</th><th>Z座標</th><th></th></tr>
       <% let number = 0 %>
       <% for( let row of zahyo ) { %>
         <tr><td><%= row.id %></td>
@@ -26,7 +26,7 @@
         <td><%= row.y %></td>
         <td><%= row.z %></td>
         <td>
-          <form action="/zahyo/delete/<%= number %>">
+          <form action="/zahyo/delete/<%= number %>" onsubmit="return confirm('本当に「<%= row.name %>」の座標を削除しますか？');">
             <button type="submit">❌</button>
         </td>
         </tr>
