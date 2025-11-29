@@ -1,0 +1,22 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= zahyo.name %></title>
+</head>
+<body>
+  <h2><%= zahyo.name %>の編集</h2>
+  <form action="/zahyo/update/<%= zahyo.id - 1 %>" method="POST">
+    <table>
+      <tr><th>項目</th><th>データ</th></tr>
+      <tr><td>ID</td><td><input type="number" name="id" value="<%= zahyo.id %>"></td></tr>
+      <tr><td>名前</td><td><input type="text" name="name" value="<%= zahyo.name %>"></td></tr>
+      <tr><td>X座標</td><td><input type="number" name="x" value="<%= zahyo.x %>"></td></tr>
+      <tr><td>Y座標</td><td><input type="number" name="y" value="<%= zahyo.y %>"></td></tr>
+      <tr><td>Z座標</td><td><input type="number" name="z" value="<%= zahyo.z %>"></td></tr>
+    </table>
+    <input type="submit" values="登録">
+  </form>
+  <a href="/zahyo/">座標一覧に戻る</a>
+</body>
+</html>

@@ -32,6 +32,13 @@ let sawara = [
   {id:4, code:"mista"}
 ];
 
+let zahyo = [
+  {id:1, name:"mapleforest1", x:6200, y:60, z:5600},
+  {id:2, name:"cave1", x:6245, y:40, z:5567},
+  {id:3, name:"mansion1", x:712, y:60, z:25240},
+  {id:4, name:"mapleforest2", x:700, y:55, z:5400}
+];
+
 app.get("/sawara", (req, res) => {
   // 本来ならここにDBとのやり取りが入る
   res.render('db3', { data: sawara });
@@ -52,47 +59,31 @@ app.get("/keiyo_add", (req, res) => {
   //res.redirect('/public/keiyo_add.html');
 });
 
+// 一覧
 app.get("/keiyo2", (req, res) => {
-  // 本来ならここにDBとのやり取りが入る
   res.render('keiyo2', {data: station2} );
 });
 
+// Create
 app.get("/keiyo2/create", (req, res) => {
   res.redirect('/public/keiyo2_new.html');
 });
 
+// Read
 app.get("/keiyo2/:number", (req, res) => {
-  // 本来ならここにDBとのやり取りが入る
   const number = req.params.number;
   const detail = station2[ number ];
   res.render('keiyo2_detail', {newdata: detail, id: number} );
 });
 
-app.get("/keiyo_add2", (req, res) => {
-  let id = req.query.id;
-  let code = req.query.code;
-  let name = req.query.name;
-  let change = req.query.change;
-  let passengers = req.query.passengers;
-  let distance = req.query.distance;
-  let newdata = { id: id, code: code, name: name, change: change, passengers: passengers, distance: distance };
-  station2.push( newdata );
-  //res.render('db2', {data: station});
-  //res.redirect('/public/keiyo_add2.html');
-});
-
 // Delete
 app.get("/keiyo2/delete/:number", (req, res) => {
-  // 本来は削除の確認ページを表示する
-  // 本来は削除する番号が存在するか厳重にチェックする
-  // 本来ならここにDBとのやり取りが入る
   station2.splice( req.params.number, 1 );
   res.redirect('/keiyo2' );
 });
 
 // Create
 app.post("/keiyo2", (req, res) => {
-  // 本来ならここにDBとのやり取りが入る
   const id = station2.length + 1;
   const code = req.body.code;
   const name = req.body.name;
@@ -106,7 +97,6 @@ app.post("/keiyo2", (req, res) => {
 
 // Edit
 app.get("/keiyo2/edit/:number", (req, res) => {
-  // 本来ならここにDBとのやり取りが入る
   const number = req.params.number;
   const detail = station2[ number ];
   res.render('keiyo2_edit', {id: number, data: detail} );
@@ -114,8 +104,6 @@ app.get("/keiyo2/edit/:number", (req, res) => {
 
 // Update
 app.post("/keiyo2/update/:number", (req, res) => {
-  // 本来は変更する番号が存在するか，各項目が正しいか厳重にチェックする
-  // 本来ならここにDBとのやり取りが入る
   station2[req.params.number].code = req.body.code;
   station2[req.params.number].name = req.body.name;
   station2[req.params.number].change = req.body.change;
@@ -123,6 +111,72 @@ app.post("/keiyo2/update/:number", (req, res) => {
   station2[req.params.number].distance = req.body.distance;
   console.log( station2 );
   res.redirect('/keiyo2' );
+});
+
+// Minecraft zahyo
+// 一覧
+app.get("/zahyo", (req, res) => {
+  res.render('zahyo', {zahyo: zahyo} );
+});
+
+// Create
+app.get("/zahyo/create", (req, res) => {
+  res.redirect('/public/zahyo_add.html');
+});
+
+// Read
+app.get("/zahyo/:number", (req, res) => {
+  const number = req.params.number;
+  const detail = zahyo[ number ];
+  res.render('zahyo_detail', {zahyo: detail, id: number} );
+});
+
+// Delete
+app.get("/zahyo/delete/:number", (req, res) => {
+  zahyo.splice( req.params.number, 1 );
+  res.redirect('/zahyo' );
+});
+
+// Create
+app.post("/zahyo", (req, res) => {
+  const id = zahyo.length + 1;
+  const name = req.body.name;
+  const x = req.body.x;
+  const y = req.body.y;
+  const z = req.body.z;
+  zahyo.push( { id: id, name: name, x: x, y: y, z: z } );
+  console.log( zahyo );
+  res.render('zahyo', {zahyo: zahyo} );
+});
+
+// Edit
+app.get("/zahyo/edit/:number", (req, res) => {
+  const number = req.params.number;
+  const detail = zahyo[ number ];
+  res.render('zahyo_edit', {id: number, zahyo: detail} );
+});
+
+// Update
+app.post("/keiyo2/update/:number", (req, res) => {
+  zahyo[req.params.number].name = req.body.name;
+  zahyo[req.params.number].x = req.body.x;
+  zahyo[req.params.number].y = req.body.y;
+  zahyo[req.params.number].z = req.body.z;
+  console.log( zahyo );
+  res.redirect('/zahyo' );
+});
+
+app.get("/keiyo_add2", (req, res) => {
+  let id = req.query.id;
+  let code = req.query.code;
+  let name = req.query.name;
+  let change = req.query.change;
+  let passengers = req.query.passengers;
+  let distance = req.query.distance;
+  let newdata = { id: id, code: code, name: name, change: change, passengers: passengers, distance: distance };
+  station2.push( newdata );
+  //res.render('db2', {data: station});
+  //res.redirect('/public/keiyo_add2.html');
 });
 
 app.get("/hello1", (req, res) => {

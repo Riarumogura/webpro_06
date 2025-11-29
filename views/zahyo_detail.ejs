@@ -1,0 +1,21 @@
+<!Doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= zahyo.name %></title>
+</head>
+<body>
+  <h2><%= zahyo.name %>の詳細</h2>
+  <table>
+    <tr><th>項目</th><th>データ</th></tr>
+    <tr><td>ID</td><td><%= zahyo.id %></td></tr>
+    <tr><td>駅名</td><td><%= zahyo.name %></td></tr>
+    <tr><td>X座標</td><td><%= zahyo.x %></td></tr>
+    <tr><td>Y座標</td><td><%= zahyo.y %></td></tr>
+    <tr><td>Z座標</td><td><%= zahyo.z %></td></tr>
+  </table>
+  <a href="/zahyo/edit/<%= id %>">編集</a>
+  <a href="/zahyo/delete/<%= id %>">削除</a>
+  <a href="/zahyo">座標一覧に戻る</a>
+</body>
+</html>

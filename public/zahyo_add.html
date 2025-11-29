@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>Minecraft座標登録</title>
+</head>
+<body>
+    <h2>Minecraft座標登録フォーム</h2>
+    <form action="/zahyo" method="POST">
+        <input type="text" name="name" required>
+        <label for="name">名前:</label><br>
+        <input type="number" name="x">
+        <label for="x">X座標:</label><br>
+        <input type="number" name="y" required>
+        <label for="y">Y座標:</label><br>
+        <input type="number" name="z" required>
+        <label for="z">Z座標:</label><br>
+        <input type="submit" values="登録">
+    </form>
+</body>
+</html>
