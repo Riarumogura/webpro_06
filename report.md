@@ -59,12 +59,12 @@ stand_add.html --> /stand: 一覧に戻る
 id | number | id
 name | text | スタンド名
 name2 | text | 本体
-dpower | radio | 破壊力
-speed | radio | スピード
-range | radio | 射程距離
-persistance | radio | 持続力
-precision | radio | 精密動作性
-dpotential | radio | 成長性
+dpower | text | 破壊力
+speed | text | スピード
+range | text | 射程距離
+persistance | text | 持続力
+precision | text | 精密動作性
+dpotential | text | 成長性
 
 ### 3. 呪術廻戦 登場人物
 ### ページ遷移図
@@ -93,6 +93,6 @@ jujutsu_add.html --> /jujutsu: 一覧に戻る
 -|-|-
 id | number | id
 name | text | スタンド名
-rank | radio | 階級
+rank | text | 階級
 jutsushiki | text | 術式名
 ryoiki | text | 領域名
