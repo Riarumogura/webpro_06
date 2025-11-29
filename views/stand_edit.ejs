@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>編集: <%= stand.name %></title>
+</head>
+<body>
+  <h2 style="text-align:center;"><%= stand.name %> の編集</h2>
+  <style>
+    div { text-align:center; }
+    table { margin:auto; }
+  </style>
+  <form action="/stand/update/<%= id %>" method="POST">
+    <table border="1" cellpadding="10">
+      <tr><th>項目</th><th>データ</th></tr>
+      <tr><td>ID</td><td><input type="number" name="id" value="<%= stand.id %>"></td></tr>
+      <tr><td>スタンド名</td><td><input type="text" name="name" value="<%= stand.name %>"></td></tr>
+      <tr><td>本体</td><td><input type="text" name="name2" value="<%= stand.name2 %>"></td></tr>
+      <tr><td>破壊力</td><td><input type="text" name="dpower" value="<%= stand.dpower %>"> (A-E)</td></tr>
+      <tr><td>スピード</td><td><input type="text" name="speed" value="<%= stand.speed %>"> (A-E)</td></tr>
+      <tr><td>射程距離</td><td><input type="text" name="range" value="<%= stand.range %>"> (A-E)</td></tr>
+      <tr><td>持続力</td><td><input type="text" name="persistance" value="<%= stand.persistance %>"> (A-E)</td></tr>
+      <tr><td>精密動作性</td><td><input type="text" name="precision" value="<%= stand.precision %>"> (A-E)</td></tr>
+      <tr><td>成長性</td><td><input type="text" name="dpotential" value="<%= stand.dpotential %>"> (A-E)</td></tr>
+    </table>
+    <div><input type="submit" value="変更" onclick="return confirm('変更しますか？');"></div>
+  </form>
+  <p style="text-align:center;"><a href="/stand">一覧に戻る</a></p>
+</body>
+</html>

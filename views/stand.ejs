@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>ジョジョ スタンド一覧</title>
+</head>
+<body>
+  <h2 style="text-align:center;">スタンドデータベース</h2>
+  
+  <style>
+    body {
+      text-align: center;
+    }
+    /* 横スクロール */
+    .scroll-box {
+      overflow-x: auto;
+      width: 90%; 
+      margin: 0 auto;
+      border: 1px solid #ccc;
+    }
+    table {
+      margin: auto;
+      border-collapse: collapse;
+      white-space: nowrap;
+      min-width: 100%;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #666;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+
+  <div class="scroll-box">
+    <table border="1">
+      <tr>
+        <th>No.</th>
+        <th>スタンド名</th>
+        <th>本体</th>
+        <th>破壊力</th>
+        <th>スピード</th>
+        <th>射程距離</th>
+        <th>持続力</th>
+        <th>精密動作性</th>
+        <th>成長性</th>
+        <th>操作</th>
+      </tr>
+      <% let number = 0 %>
+      <% for( let row of stand ) { %>
+        <tr>
+          <td><%= row.id %></td>
+          <td><a href="/stand/<%= number %>"><%= row.name %></a></td>
+          <td><%= row.name2 %></td>
+          <td><%= row.dpower %></td>
+          <td><%= row.speed %></td>
+          <td><%= row.range %></td>
+          <td><%= row.persistance %></td>
+          <td><%= row.precision %></td>
+          <td><%= row.dpotential %></td>
+          <td>
+            <form action="/stand/delete/<%= number %>" onsubmit="return confirm('本当に「<%= row.name %>」を削除しますか？');">
+              <button type="submit">❌</button>
+            </form>
+          </td>
+        </tr>
+        <% number += 1 %>
+      <% } %>
+    </table>
+  </div>
+
+  <p style="text-align:center; margin-top: 20px;">
+    <a href="/stand/create">スタンドを追加する</a>
+  </p>
+  <p style="text-align:center;">
+    <a href="/">ホームに戻る</a>
+  </p>
+</body>
+</html>

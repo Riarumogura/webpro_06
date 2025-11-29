@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>呪術廻戦 登録</title>
+</head>
+<body>
+    <h2 style="text-align:center;">登場人物登録フォーム</h2>
+    <style>
+        div{ text-align:center; }
+        table{ margin:auto; }
+    </style>
+    <form class="center" action="/jujutsu" method="POST">
+        <table border="1" cellpadding="10">
+            <tr><td>名前</td><td><input type="text" name="name" required></td></tr>
+            <tr><td>階級</td><td>
+                <label><input type="radio" name="rank" value="特級"> 特級</label>
+                <label><input type="radio" name="rank" value="1級"> 1級</label>
+                <label><input type="radio" name="rank" value="準1級"> 準1級</label>
+                <label><input type="radio" name="rank" value="2級"> 2級</label>
+                <label><input type="radio" name="rank" value="準2級"> 準2級</label>
+                <label><input type="radio" name="rank" value="3級"> 3級</label>
+                <label><input type="radio" name="rank" value="4級"> 4級</label>
+            </td></tr>
+            <tr><td>術式</td><td><input type="text" name="jutsushiki"></td></tr>
+            <tr><td>領域名</td><td><input type="text" name="ryoiki"></td></tr>
+        </table>
+        <div><input type="submit" value="登録"></div>
+    </form>
+    <p style="text-align:center;"><a href="/jujutsu">一覧に戻る</a></p>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>スタンド登録</title>
+</head>
+<body>
+    <h2 style="text-align:center;">スタンド登録フォーム</h2>
+    <style>
+        div{ text-align:center; }
+        table{ margin:auto; }
+    </style>
+    <form class="center" action="/stand" method="POST">
+        <table border="1" cellpadding="10">
+            <tr><td>スタンド名</td><td><input type="text" name="name" required></td></tr>
+            <tr><td>本体</td><td><input type="text" name="name2" required></td></tr>
+            <tr><td>破壊力</td><td>
+                <label><input type="radio" name="dpower" value="A"> A</label>
+                <label><input type="radio" name="dpower" value="B"> B</label>
+                <label><input type="radio" name="dpower" value="C"> C</label>
+                <label><input type="radio" name="dpower" value="D"> D</label>
+                <label><input type="radio" name="dpower" value="E"> E</label>
+            </td></tr>
+            <tr><td>スピード</td><td>
+                <label><input type="radio" name="speed" value="A"> A</label>
+                <label><input type="radio" name="speed" value="B"> B</label>
+                <label><input type="radio" name="speed" value="C"> C</label>
+                <label><input type="radio" name="speed" value="D"> D</label>
+                <label><input type="radio" name="speed" value="E"> E</label>
+            </td></tr>
+            <tr><td>射程距離</td><td>
+                <label><input type="radio" name="range" value="A"> A</label>
+                <label><input type="radio" name="range" value="B"> B</label>
+                <label><input type="radio" name="range" value="C"> C</label>
+                <label><input type="radio" name="range" value="D"> D</label>
+                <label><input type="radio" name="range" value="E"> E</label>
+            </td></tr>
+            <tr><td>持続力</td><td>
+                <label><input type="radio" name="persistance" value="A"> A</label>
+                <label><input type="radio" name="persistance" value="B"> B</label>
+                <label><input type="radio" name="persistance" value="C"> C</label>
+                <label><input type="radio" name="persistance" value="D"> D</label>
+                <label><input type="radio" name="persistance" value="E"> E</label>
+            </td></tr>
+            <tr><td>精密動作性</td><td>
+                <label><input type="radio" name="precision" value="A"> A</label>
+                <label><input type="radio" name="precision" value="B"> B</label>
+                <label><input type="radio" name="precision" value="C"> C</label>
+                <label><input type="radio" name="precision" value="D"> D</label>
+                <label><input type="radio" name="precision" value="E"> E</label>
+            </td></tr>
+            <tr><td>成長性</td><td>
+                <label><input type="radio" name="dpotential" value="A"> A</label>
+                <label><input type="radio" name="dpotential" value="B"> B</label>
+                <label><input type="radio" name="dpotential" value="C"> C</label>
+                <label><input type="radio" name="dpotential" value="D"> D</label>
+                <label><input type="radio" name="dpotential" value="E"> E</label>
+            </td></tr>
+        </table>
+        <div><input type="submit" value="登録"></div>
+    </form>
+    <p style="text-align:center;"><a href="/stand">一覧に戻る</a></p>
+</body>
+</html>

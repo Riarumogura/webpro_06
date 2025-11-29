@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>呪術廻戦 登場人物一覧</title>
+</head>
+<body>
+  <h2 style="text-align:center;">呪術廻戦 登場人物データベース</h2>
+  <style>
+    body {
+      text-align: center;
+    }
+    div {
+        text-align: center;
+    }
+    table {
+      margin: auto;
+      border-collapse: collapse;
+      white-space: nowrap;
+      min-width: 100%;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: center;
+      border: 1px solid #666;
+    }
+    th {
+      background-color: #f2f2f2;
+    }
+  </style>
+  <div>
+  <table border="1" cellpadding="10">
+    <tr><th>No.</th><th>名前</th><th>階級</th><th>術式</th><th>領域</th><th>操作</th></tr>
+      <% let number = 0 %>
+      <% for( let row of jujutsu ) { %>
+        <tr>
+        <td><%= row.id %></td>
+        <td><a href="/jujutsu/<%= number %>"><%= row.name %></a></td>
+        <td><%= row.rank %></td>
+        <td><%= row.jutsushiki %></td>
+        <td><%= row.ryoiki %></td>
+        <td>
+          <form action="/jujutsu/delete/<%= number %>" onsubmit="return confirm('本当に「<%= row.name %>」を削除しますか？');">
+            <button type="submit">❌</button>
+          </form>
+        </td>
+        </tr>
+        <% number += 1 %>
+      <% } %>
+  </table>
+  </div>
+  <p style="text-align:center;"><a href="/jujutsu/create">人物を追加する</a></p>
+  <p style="text-align:center;"><a href="/">ホームに戻る</a></p>
+</body>
+</html>

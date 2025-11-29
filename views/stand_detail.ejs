@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title><%= stand.name %>の詳細</title>
+</head>
+<body>
+  <h2 style="text-align:center;"><%= stand.name %> の詳細</h2>
+  <style>
+    table { margin:auto; }
+  </style>
+  <table border="1" cellpadding="15">
+    <tr><th>項目</th><th>データ</th></tr>
+    <tr><td>ID</td><td><%= stand.id %></td></tr>
+    <tr><td>スタンド名</td><td><%= stand.name %></td></tr>
+    <tr><td>本体</td><td><%= stand.name2 %></td></tr>
+    <tr><td>破壊力</td><td><%= stand.dpower %></td></tr>
+    <tr><td>スピード</td><td><%= stand.speed %></td></tr>
+    <tr><td>射程距離</td><td><%= stand.range %></td></tr>
+    <tr><td>持続力</td><td><%= stand.persistance %></td></tr>
+    <tr><td>精密動作性</td><td><%= stand.precision %></td></tr>
+    <tr><td>成長性</td><td><%= stand.dpotential %></td></tr>
+  </table>
+  <p style="text-align:center;"><a href="/stand/edit/<%= id %>">編集</a></p>
+  <p style="text-align:center;"><a href="/stand/delete/<%= id %>">削除</a></p>
+  <p style="text-align:center;"><a href="/stand">一覧に戻る</a></p>
+</body>
+</html>
