@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title><%= title %></title>
+</head>
+<body>
+    <h1 style="text-align:center;"><%= title %></h1>
+    <h2 style="text-align:center;">ゆっくりしていってね！</h2>
+    <p>↓ ULR一覧 ↓</p>
+    <ul>
+        <% links.forEach(link => { %>
+            <li><a href="<%= link.url %>"><%= link.text %></a></li>
+        <% }); %>
+    </ul>
+</body>
+</html>

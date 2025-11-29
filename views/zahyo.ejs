@@ -5,10 +5,19 @@
   <title>Minecraftデータベース</title>
 </head>
 <body>
-  <h2>Minecraft座標データベース</h2>
-  <h3>Minecraft登録座標一覧</h3>
-  <table>
-    <tr><th>ID</th><th>名前</th><th>X座標</th><th>y座標</th><th>Z座標</th></tr>
+  <h2 style="text-align:center;">Minecraft座標データベース</h2>
+  <h3 style="text-align:center;">Minecraft登録座標一覧</h3>
+  <style>
+    div{
+        text-align:center;
+    }
+    table{
+        margin:auto;
+    }
+  </style>
+  <div>
+  <table border="1" cellpadding="15">
+    <tr><th>ID</th><th>名前</th><th>X座標</th><th>y座標</th><th>Z座標</th><th></th></tr>
       <% let number = 0 %>
       <% for( let row of zahyo ) { %>
         <tr><td><%= row.id %></td>
@@ -16,10 +25,16 @@
         <td><%= row.x %></td>
         <td><%= row.y %></td>
         <td><%= row.z %></td>
+        <td>
+          <form action="/zahyo/delete/<%= number %>">
+            <button type="submit">❌</button>
+        </td>
         </tr>
         <% number += 1 %>
       <% } %>
   </table>
-  <a href="/zahyo/create">追加</a>
+  </div>
+  <p style="text-align:center;"><a href="/zahyo/create">座標を追加する</a></p>
+  <p style="text-align:center;"><a href="/">ホームに戻る</a></p>
 </body>
 </html>

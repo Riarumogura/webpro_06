@@ -5,17 +5,36 @@
     <title>Minecraft座標登録</title>
 </head>
 <body>
-    <h2>Minecraft座標登録フォーム</h2>
-    <form action="/zahyo" method="POST">
-        <input type="text" name="name" required>
-        <label for="name">名前:</label><br>
-        <input type="number" name="x">
-        <label for="x">X座標:</label><br>
-        <input type="number" name="y" required>
-        <label for="y">Y座標:</label><br>
-        <input type="number" name="z" required>
-        <label for="z">Z座標:</label><br>
-        <input type="submit" values="登録">
+    <h2 style="text-align:center;">Minecraft座標登録フォーム</h2>
+    <style>
+        div{
+            text-align:center;
+        }
+        table{
+            margin:auto;
+        }
+    </style>
+    <form class="center" action="/zahyo" method="POST">
+        <table border="1" cellpadding="10">
+            <tr>
+                <td>名前</td>
+                <td><input type="text" name="name" required></td>
+            </tr>
+            <tr>
+                <td>X座標</td>
+                <td><input type="number" name="x"></td>
+            </tr>
+            <tr>
+                <td>Y座標</td>
+                <td><input type="number" name="y" required></td>
+            </tr>
+            <tr>
+                <td>Z座標</td>
+                <td><input type="number" name="z" required></td>
+            </tr>
+        </table>
+        <div><input type="submit" values="登録"></div>
     </form>
+    <p style="text-align:center;"><a href="/zahyo">座標一覧に戻る</a></p>
 </body>
 </html>

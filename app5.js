@@ -39,6 +39,18 @@ let zahyo = [
   {id:4, name:"mapleforest2", x:700, y:55, z:5400}
 ];
 
+app.get("/", (req, res) => {
+  res.render('landing', { title: "ホーム", links: [
+    { url: "/keiyo", text: "京葉線1"},
+    { url: "/keiyo2", text: "京葉線2"},
+    { url: "/janken2", text: "じゃんけん2"},
+    { url: "/sawara", text: "sawara" },
+    { url: "/zahyo", text: "Minecraft座標一覧"},
+    { url: "/jojo3", text: "ジョジョの奇妙な冒険 スターダストクルセイダース スタンド一覧"},
+    { url: "/jujutsu", text: "呪術廻戦 登場人物一覧"},
+  ]});
+});
+
 app.get("/sawara", (req, res) => {
   // 本来ならここにDBとのやり取りが入る
   res.render('db3', { data: sawara });

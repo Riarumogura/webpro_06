@@ -4,17 +4,21 @@
 #### ページ遷移図
 ```mermaid
 stateDiagram-v2
-[*] --> /public/minecraft.html
+[*] --> /
 
-/public/minecraft.html --> \zahyo: 座標一覧を表示(1)
+/ --> /zahyo: 座標一覧を表示(1)
+/zahyo --> /: ホームに戻る
 
-\zahyo --> \zahyo_detail: 座標の詳細を表示
+/zahyo --> /zahyo_detail: 座標の詳細を表示
+/zahyo_detail --> /zahyo: 一覧に戻る
 
-\zahyo --> \zahyo_add: 座標を登録
+/zahyo --> zahyo_add.html: 座標を登録
+zahyo_add.html --> /zahyo: 一覧に戻る
 
-\zahyo --> \zahyo_edit: 座標を編集
+/zahyo --> /zahyo_edit: 座標を編集
+/zahyo_edit --> /zahyo: 一覧に戻る
 
-\zahyo --> \zahyo_delete: 座標を削除　
+/zahyo --> /zahyo: 座標を削除
 ```
 
 #### (1)のパラメータ
@@ -23,9 +27,9 @@ stateDiagram-v2
 -|-|-
 id | number | id
 name | text | 名前 
-x | number | x座標 
-y | number | y座標 
-z | number | z座標 
+x | number | X座標 
+y | number | Y座標 
+z | number | Z座標 
 
 ### 2. ジョジョの奇妙な冒険 スターダストクルセイダース スタンド
 #### ページ遷移図
