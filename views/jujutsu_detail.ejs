@@ -18,7 +18,9 @@
     <tr><td>領域</td><td><%= jujutsu.ryoiki %></td></tr>
   </table>
   <p style="text-align:center;"><a href="/jujutsu/edit/<%= id %>">編集</a></p>
-  <p style="text-align:center;"><a href="/jujutsu/delete/<%= id %>">削除</a></p>
+  <p style="text-align:center;">
+    <a href="/jujutsu/delete/<%= id %>" onclick="return confirm('本当に削除しますか？');">削除</a>
+  </p>
   <p style="text-align:center;"><a href="/jujutsu">一覧に戻る</a></p>
 </body>
 </html>

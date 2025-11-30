@@ -1,3 +1,4 @@
+"use strict";
 const { name } = require("ejs");
 const express = require("express");
 const app = express();
