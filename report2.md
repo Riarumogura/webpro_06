@@ -1,4 +1,5 @@
-#### ジョジョの奇妙な冒険 スターダストクルセイダース スタンド
+### ジョジョの奇妙な冒険 スターダストクルセイダース スタンド -->
+#### ページ遷移図
 ```mermaid
 stateDiagram-v2
 
@@ -18,7 +19,22 @@ stand_add.html --> /stand: 一覧に戻る
 /stand --> /stand: スタンドを削除
 ```
 
-#### 呪術廻戦 登場人物
+#### (1)のパラメータ
+
+パラメータ名 | 属性 | 内容 |
+-|-|-
+id | number | id
+name | text | スタンド名
+name2 | text | 本体
+dpower | text | 破壊力
+speed | text | スピード
+range | text | 射程距離
+persistance | text | 持続力
+precision | text | 精密動作性
+dpotential | text | 成長性
+
+### 呪術廻戦 登場人物
+#### ページ遷移図
 ```mermaid
 stateDiagram-v2
 
@@ -38,7 +54,18 @@ jujutsu_add.html --> /jujutsu: 一覧に戻る
 /jujutsu --> /jujutsu:人物を削除
 ```
 
-####  Minecraft座標登録
+#### (2)のパラメータ
+
+パラメータ名 | 属性 | 内容 |
+-|-|-
+id | number | id
+name | text | 人物名
+rank | text | 階級
+jutsushiki | text | 術式名
+ryoiki | text | 領域名
+
+###  Minecraft座標登録
+#### ページ遷移図
 ```mermaid
 stateDiagram-v2
 
@@ -57,3 +84,13 @@ zahyo_add.html --> /zahyo: 一覧に戻る
 
 /zahyo --> /zahyo: 座標を削除
 ```
+
+#### (3)のパラメータ
+
+パラメータ名 | 属性 | 内容 |
+-|-|-
+id | number | id
+name | text | 名前 
+x | number | X座標 
+y | number | Y座標 
+z | number | Z座標 
